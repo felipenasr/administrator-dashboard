@@ -1,0 +1,15 @@
+
+<ul id="dropdown1" class="dropdown-content">
+  <li><a (click)="logout()" routerLink="/login">Sair</a></li>
+</ul>
+<nav id="navbar-dash" class="navbar-fixed">
+  <div class="nav-wrapper">
+    <div id="dash-logo">
+        <a (click)="refresh()" class="brand-logo">ACQUA<strong>GROUP</strong></a>          
+    </div>
+    <a data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>    
+    <ul class="right hide-on-med-and-down">
+      <li><a class="dropdown-button" id="user-dash" data-activates="dropdown1">Usuario<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>

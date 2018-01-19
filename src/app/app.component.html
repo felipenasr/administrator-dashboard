@@ -1,0 +1,13 @@
+<div class="row" *ngIf="auth.check">
+    <app-navbar></app-navbar>
+</div>
+
+<div class="row" *ngIf="auth.check">
+    <app-sidebar></app-sidebar>
+</div>
+
+<router-outlet *ngIf="!auth.check"></router-outlet>
+
+<div class="row" *ngIf="auth.check">
+    <router-outlet></router-outlet>
+</div>

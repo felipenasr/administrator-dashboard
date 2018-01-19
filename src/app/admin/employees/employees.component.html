@@ -1,0 +1,89 @@
+<div class="row admin-row" *ngIf="hasError">
+  <div class="row">
+    <div class="col s12">
+      <h2>Funcionarios</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s6"></div>
+    <div class="col s6">
+      <input
+        #inputSearch
+        type="text"
+        (keyup)="findEmployee(inputSearch.value)"
+        >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <table class = "table striped highlight">
+          <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Documento</th>
+                <th>Cargo</th>
+                <th>Empresa</th>
+                <th>Data de Admissão</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="!hasSearch">
+            <tr *ngFor="let employee of employees" [routerLink]="['/admin/funcionarios/', employee.id]">
+                <td
+                  class="cont-img-thumb td-pad"
+                ><img 
+                        src="http://www.ufrgs.br/obec/obec_old/assets/equipe/default.png"
+                        class="circle responsive-img user-thumb"
+                        >
+                </td>
+                <td class="td-pad">
+                  {{ employee.nome }}
+                </td>
+                <td class="td-pad" *ngIf="employee.dadosPessoais.cpf">
+                  {{ employee.dadosPessoais.cpf }}
+                </td>
+                
+                <td class="td-pad" *ngIf="employee.dadosPessoais.cnpj">
+                  {{ employee.dadosPessoais.cnpj }}
+                </td>
+                
+                
+                <td class="td-pad"> {{ employee.cargo.cargo }} </td>
+                <td class="td-pad"> {{ employee.empresa }} </td>
+                <td class="td-pad"> 07/11/2017 </td>
+            </tr>
+          </tbody>
+          
+          <tbody *ngIf="hasSearch">
+            <tr *ngFor="let employee of employeesSearchResult" [routerLink]="['/admin/funcionarios/', employee.id]">
+                <td
+                  class="cont-img-thumb td-pad"
+                ><img 
+                        src="http://www.ufrgs.br/obec/obec_old/assets/equipe/default.png"
+                        class="circle responsive-img user-thumb"
+                        >
+                </td>
+                <td class="td-pad">
+                  {{ employee.nome }}
+                </td>
+                <td class="td-pad" *ngIf="employee.dadosPessoais.cpf">
+                  {{ employee.dadosPessoais.cpf }}
+                </td>
+                
+                <td class="td-pad" *ngIf="employee.dadosPessoais.cnpj">
+                  {{ employee.dadosPessoais.cnpj }}
+                </td>
+                
+                <td class="td-pad"> {{ employee.cargo.cargo }} </td>
+                <td class="td-pad"> {{ employee.empresa }} </td>
+                <td class="td-pad"> 07/11/2017 </td>
+            </tr>
+          </tbody>
+          
+
+
+        </table>
+    </div>
+  </div>
+  
+</div>

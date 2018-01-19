@@ -1,0 +1,145 @@
+/* You can add global styles to this file, and also import other style files */
+@import "sass/_variables.scss";
+
+body{
+    background: $baby_blue;
+}
+
+
+/////////////////////////////////////////
+// Setting up sidebar
+/////////////////////////////////////////
+
+#slide-out{
+    z-index: 998 !important;
+    background: $blue-two;
+    color: $strong-blue;
+}
+ul#slide-out {
+    width: 260px;
+}
+ul.collapsible-dash {
+    padding-top: 63px;
+}
+
+#slide-out li.active{
+    color: $branco;
+    background: $blue;
+}
+#slide-out .collapsible-body, .side-nav.fixed .collapsible-body{
+    background: $blue;    
+}
+
+
+.submenu-dash{
+    color: $branco !important;
+    padding-left: 45px;
+}
+.submenu-dash:hover{
+    color: $strong-blue !important;
+    padding-left: 45px;
+    transition: ease 0.5s;
+}
+.side-nav .collapsible-header:hover, .side-nav.fixed .collapsible-header:hover {
+    color: $branco;
+    background: $blue;
+    transition: ease 0.4s;
+}
+header, main, footer {
+    padding-left: 300px;
+}
+
+.menu-dash {
+    color: $strong-blue ;
+}
+
+
+/////////////////////////////////////////
+// Setting navbar color
+/////////////////////////////////////////
+
+#navbar-dash{
+    background: $blue;
+    z-index: 999;
+}
+.navbar-fixed{
+    position: fixed;
+}
+
+
+
+#dash-logo{
+    width: 260px;
+    position: relative;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#dropdown1{
+    margin-top:65px;
+}
+
+////////////////////////////
+// submenus styling
+////////////////////////////
+
+
+
+@media only screen and (min-width : 993px) {
+    #slide-out .collapsible-body, .side-nav.fixed .collapsible-body{
+        border-top: 1px solid #87b8da;
+    }
+    
+}
+
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+    ul#slide-out {
+        width: 300px;
+    }
+    #navbar-dash{
+        z-index: 997;
+    }
+    #dash-logo{
+        width: 100%;
+    }    
+    .row.admin-row {
+        padding-left: 0 !important;
+    }
+    ul.collapsible-dash {
+        padding-top: 0 !important;
+    }
+}
+
+////////////////////////////
+// adm styles
+////////////////////////////
+
+.row.admin-row {
+    padding-left: 275px;
+}
+
+
+#sidenav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 997;
+    will-change: opacity;
+}
+
+.brand-logo:hover{
+    cursor: pointer;
+}
+
+table.highlight>tbody>tr:hover {
+    background-color: #dae6f1;
+}

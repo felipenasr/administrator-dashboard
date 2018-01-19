@@ -1,0 +1,69 @@
+<div class="row admin-row">
+<br>
+<br>
+<br>
+<br>
+<br>
+ 
+    <div *ngIf="hasData">
+
+
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+                <i (click)="edit(input1, btn1)" #btn1 class="material-icons edit-icon">mode_edit</i>                  
+                <input id="first_name"
+                      (blur)="verifyOut(input1, btn1)"
+                       #input1
+                       type="text" 
+                       class="validate"
+                       value=""
+                       [(ngModel)]="data.pessoa.nome"
+                       name="teste"
+                       >
+                <label class="active" for="first_name">First Name</label>
+              </div>
+              <div class="input-field col s6">
+                <i (click)="edit(input2, btn2)" #btn2 class="material-icons edit-icon">mode_edit</i>                  
+                <input id="last_name"
+                (blur)="verifyOut(input2, btn2)"
+                #input2
+                disabled
+                type="text"
+                value=""
+                class="validate"
+                [(ngModel)]="data.pessoa.type.razao_social"
+                name="teste"
+                >
+                <label class="active" for="last_name">Last Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            
+            
+            <button 
+                class="btn waves-effect waves-light"
+                type="submit"
+                name="action"
+                *ngIf="changes"
+                >Submit
+                <i class="material-icons right">send</i>
+            </button>
+            
+          </form>
+      
+        <p>{{data.id}}</p>
+        <p></p>
+        <p>{{data.pessoa.pessoa_type}}</p>
+        <p>{{l}}</p>
+        <p>{{data.departamento.nome}}</p>
+        <p>{{data.cargo.nome}}</p>
+        <p>{{data.cargo.salario}}</p>
+    </div>
+    
+</div>
